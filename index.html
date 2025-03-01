@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebration and Photos</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffcc00;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ff5733;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin: 20px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #ff5733;
+        }
+
+        /* Cake Animation Styles */
+        .cake {
+            width: 250px;
+            cursor: pointer;
+            transition: transform 0.5s ease;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .cut {
+            animation: cutAnimation 0.5s forwards;
+        }
+
+        @keyframes cutAnimation {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(0.9);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Photo Gallery Styles */
+        #photos {
+            margin-top: 40px;
+        }
+
+        .photo-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .photo-container img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .photo-container img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Celebration Page</h1>
+        <nav>
+            <a href="">Back to Birthday Card</a>
+        </nav>
+    </header>
+    <section id="celebration">
+        <h2>Celebrate with Us!</h2>
+        <p>Join us for a fun-filled celebration!</p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM0t33LPp7gUCzZQJEAg15Sn_4-Nsyu-6UuA&s" alt="Birthday Cake" class="cake" id="cakeImage">
+    </section>
+    <section id="photos">
+        <h2>Photo Gallery</h2>
+        <div class="photo-container">
+            <img src="Snapchat-1265421484.jpg" alt="Celebration Photo 1">
+            <img src="Snapchat-1299527968.jpg" alt="Celebration Photo 2">
+            <img src="Snapchat-678303220.jpg" alt="Celebration Photo 3">
+        </div>
+    </section>
+    <script>
+        // JavaScript to handle the cake cutting animation
+        document.getElementById('cakeImage').addEventListener('click', function() {
+            this.classList.add('cut');
+            // Remove the class after the animation ends to allow it to be triggered again
+            setTimeout(() => {
+                this.classList.remove('cut');
+            }, 500); // Match this duration with the animation duration
+        });
+    </script>
+</body>
+
+</html>
